@@ -40,7 +40,7 @@ This project was developed for a client selling elevator products under the Fuji
 ---
 
 ## Screenshot 1 (Home)
-![Nbsimgalift.com Preivew][/public/frontend/media/preview.png]
+![Nbsimgalift.com Preivew](/public/frontend/media/preview.png)
 Thank You for having Patiece . Feel Free to have a free consultation
 
 ---

@@ -1,0 +1,16 @@
+# 1) Enable rewrite engine
+RewriteEngine On
+
+# 2) Force HTTPS
+# If the request isn’t already HTTPS…
+# …redirect to the same host/URI but with https://
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 3) Internally rewrite everything into /public/, unless it’s already there
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteCond %{REQUEST_URI} !^/sitemap\.xml$
+RewriteCond %{REQUEST_URI} !^/image-sitemap\.xml$
+RewriteCond %{REQUEST_URI} !^/BingSiteAuth\.xml$
+RewriteCond %{REQUEST_URI} !^/robots\.txt$
+RewriteRule ^(.*)$ /public/$1 [L]
